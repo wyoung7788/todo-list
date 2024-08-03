@@ -1,16 +1,35 @@
+'use client'
 import Image from "next/image";
-import styles from '@/app/ui/home.module.css'
+import React, {useState, useEffect} from "react";
+import styles from "./home.module.css";
+
 export default function Header(){
+    const [position, setPosition] = useState(window.screenY)
+    const [visible, setVisible] = useState(true);
+    useEffect(()=>{
+        const handleScroll = () => {
+            if (window.scrollY > window.screenY){
+                setVisible(false);
+            } else {
+                setVisible(true);
+            }
+        };
+        window.addEventListener("scroll", handleScroll)
+        return(()=> {
+            window.removeEventListener("scroll", handleScroll);
+        }
+        )
+    }
+    )
+    const cls = visible?"visible":"hidden";
     return (
-        <main>
-        <div className={styles['image-wrapper']}/>
-        <Image
-            src="/mountains.jpg"
-            layout="fill"
-            alt="Mountain background"
-            className={styles['image']}
-            priority
-        />
-        </main>
+
+        <div>
+        <header className={cls}>
+        </header>
+        <p>
+           
+        </p>
+        </div>
     )
 }
