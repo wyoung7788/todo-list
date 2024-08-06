@@ -3,33 +3,17 @@ import Image from "next/image";
 import React, {useState, useEffect} from "react";
 import styles from "./home.module.css";
 
-export default function Header(){
-    const [position, setPosition] = useState(window.screenY)
-    const [visible, setVisible] = useState(true);
-    useEffect(()=>{
-        const handleScroll = () => {
-            if (window.scrollY > window.screenY){
-                setVisible(false);
-            } else {
-                setVisible(true);
-            }
-        };
-        window.addEventListener("scroll", handleScroll)
-        return(()=> {
-            window.removeEventListener("scroll", handleScroll);
-        }
-        )
-    }
-    )
-    const cls = visible?"visible":"hidden";
-    return (
 
+
+export default function Header(){
+
+    return(
         <div>
-        <header className={cls}>
-        </header>
-        <p>
-           
-        </p>
+             <div className="bg-hero bg-contain bg-cover font-sans text-center text-fuchsia-800 h-52">
+            <h1 className="align-middle pt-12 rounded-sm font-extrabold text-5xl">
+            TO DO
+            </h1>
+            </div>
         </div>
     )
 }
