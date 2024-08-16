@@ -1,17 +1,19 @@
 'use client'
 import Image from "next/image";
 import React, {useState, useEffect} from "react";
-import styles from "./home.module.css";
-
+import Quote from "./quote";
 
 
 export default function Header(){
 
     return(
         <div>
-             <div className="bg-hero bg-contain bg-cover font-sans text-center text-fuchsia-800 h-52">
+             <div className="bg-hero bg-cover text-center text-slate-700 h-60">
             <h1 className="align-middle pt-12 rounded-sm font-extrabold text-5xl">
-            TO DO
+            to do list
+            </h1>
+            <h1>
+                <Quote/>
             </h1>
             </div>
         </div>

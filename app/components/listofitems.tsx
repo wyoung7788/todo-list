@@ -76,19 +76,25 @@ const App = () => {
     };
         
     return(
-        <div className="form-container">
+        <div className="place-content-center">
+            <span className="inline-grid grid-cols-2 gap-4">
+            <span>
             <input 
                 placeholder="Add new to-do..."
                 className="text-slate-700"
                 value={todo}
                 onChange={(e)=>updateToDo(e.target.value)}
             />
+            </span>
+            <span>
             <PlusCircleIcon className="size-6" type="button" onClick={handleAdd}/>
+            </span>
+            </span>
             <div className="list-container place-content-center w-20 ">
                 <ul>
                     {list.length > 0? (
                     list.map((e) => (
-                    <li key ={e.id} className="text-blue-600 flex-auto items-center">
+                    <li key ={e.id} className="text-slate-500 flex-auto items-center">
                     {edit && editId === e.id ? (
                         <>
                         <input 
@@ -120,7 +126,9 @@ const App = () => {
                         </li>
                     ))
                 ) : (
+                    <div className="text-center h-dvh ">
                     <p> List Empty</p>
+                    </div>
                 )}
                 </ul>
                 </div>
