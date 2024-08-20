@@ -1,16 +1,14 @@
-import ReactQueryProvider from "../utils/reactqueryprovider";
+import ReactQueryProvider from "../reactqueryprovider";
+import React, {ReactNode} from "react";
 
-
-export default function Quote({
-    children,
-    } ,{
-    children: React.ReactNode;
+export default function Quote(props: {
+    children: React.ReactNode
     }){
     return (
         <html lang='en'>
             <body>
                 <ReactQueryProvider>
-                    <main>{children}</main>
+                    <main>{props.children}</main>
                 </ReactQueryProvider>
             </body>
         </html>
