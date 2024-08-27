@@ -1,6 +1,6 @@
 'use client'
 import React, {useState} from "react";
-import connectToDB from "@/app/lib/mongodb";
+//import connectToDB from "@/app/lib/mongodb";
 import { PlusCircleIcon, PencilIcon} from "@heroicons/react/24/outline";
 
 
@@ -11,7 +11,7 @@ type ToDoItem = {
 };
 
 const App = () => {
-    connectToDB();
+   // connectToDB();
 
     const [list, setList] = useState<ToDoItem[]>([]);
     const [todo, setToDo] = useState<string>(''); // item in the textbox

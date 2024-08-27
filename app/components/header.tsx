@@ -2,7 +2,7 @@
 import React from "react";
 import getQuote from "./getquote";
 import { useQuery} from "@tanstack/react-query";
-import Loading from "../dashboard/loading";
+import Loading from "../protected/client/loading";
 
 interface Quote {
     quote: string;
