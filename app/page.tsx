@@ -1,16 +1,28 @@
-"use client"
-import React from "react";
-import Home from "./pages/loggedin";
-import Login from "./pages/login";
-import Router from "next/router";
-import { SessionProvider } from "next-auth/react";
+'use client'
+
+import React from "react"
+import {useRouter} from "next/navigation";
 
 
-export default function App({ Component, pageProps}){
+export default function Page(){
+   const router = useRouter();
     return(
-        <SessionProvider session={pageProps.session}>
-            <Component {...pageProps}/>
-        </SessionProvider>
-    
+        //log in with mongodb or google authentication 
+        <div>
+        <div className="">welcome to your to-do list</div>
+        <div>
+            <div>
+            log in here: 
+            <button type="button" onClick={()=> router.push('/login')}
+            className="rounded-sm bg-slate-500">log in
+            </button>
+            </div>
+            <div>
+            sign up here:
+            <button type="button"
+            onClick={()=> router.push('/signup')}>sign up</button>
+            </div>
+        </div>
+        </div>
     );
 }

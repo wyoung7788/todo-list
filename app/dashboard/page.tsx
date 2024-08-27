@@ -2,12 +2,11 @@
 import Header from "../components/header";
 import ListofItems from "../components/listofitems";
 import Background from "../components/background";
-import LogOut from "../components/logout";
-export default function Home() {
+
+export default function Dashboard() {
   return (
         <div className="relative grid grid-cols-1  justify-center">
             <div className= "justify-right place-content-end">
-            <LogOut/>
             </div>
             <Background/>
             <div className="relative z-10 bg-slate-400">

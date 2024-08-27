@@ -1,6 +1,6 @@
 'use client'
 import React, {useState} from "react";
-import connectToDB from "@/libs/mongodb";
+import connectToDB from "@/app/lib/mongodb";
 import { PlusCircleIcon, PencilIcon} from "@heroicons/react/24/outline";
 
 
