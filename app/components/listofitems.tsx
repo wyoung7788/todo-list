@@ -84,6 +84,7 @@ const App = () => {
                 className="text-slate-700"
                 value={todo}
                 onChange={(e)=>updateToDo(e.target.value)}
+                
             />
             </span>
             <span>

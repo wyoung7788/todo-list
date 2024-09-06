@@ -18,3 +18,14 @@
   border: 1px solid #dfdfdf;
   outline: none;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  display: flex;
+  justify-content:center;
+}
