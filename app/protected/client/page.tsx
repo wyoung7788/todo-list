@@ -21,7 +21,7 @@ const Client = () => {
         <div className= "justify-right place-content-end">
         </div>
         <Background/>
-        <div className="relative z-10 bg-slate-400">
+        <div className="relative z-10 bg-slate-200">
             <Header/>
         </div>
         <div className="relative z-10">
@@ -39,7 +39,7 @@ const Client = () => {
         
         </div>
         </div>
-            <button type="button" className="bg-blue-600"
+            <button type="button" className="bg-blue-200 p-3"
             onClick={()=> signOut()}
             >Sign out
             </button>

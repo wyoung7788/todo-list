@@ -9,6 +9,9 @@ export interface UserDocument{
     createdAt: Date;
     updatedAt: Date;
 }
+
+
+
 const UserSchema = new Schema<UserDocument>({
     email: {
         type: String,
