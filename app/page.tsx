@@ -1,30 +1,14 @@
 'use client'
-
 import React from "react"
 import {useRouter} from "next/navigation";
 import {useSession, signIn} from "next-auth/react"
-
+import { SignInForm } from "./components/signinform";
 
 export default function Page(){
    const router = useRouter();
    const { data: session } = useSession();
    if (session){
         router.push("/protected/client");
-    }
-    const handleSubmit = async(event: FormEvent<HTMLFormElement>) =>{
-        event.preventDefault();
-        const formData = new FormData(event.currentTarget);
-        const res = await signIn("credentials", {
-            email: formData.get("email"),
-            password: formData.get("password"),
-            redirect: false,
-        });
-        if (res?.error){
-            setError(res.error as string);
-        }
-        if(res?.ok) {
-            return router.push("/")
-        }
     }
     return(
         //log in with mongodb or google authentication 
@@ -37,21 +21,7 @@ export default function Page(){
                 </svg>
         </div>
         <div className="center text-orange-400 font-semibold text-3xl">stay on track</div>
-
-        <form onSubmit={handleSubmit}/>
-        <input type="email"
-            className= "w-full h-10 border border-solid rounded p-2 gap-y-7"
-            />
-        <input type="password"
-            className="w-full h-8 border flex text-center border-solidrounded p-2 gap-y-7"
-            />
-            <div className="text-center py-3">
-        <button type="button" onClick={()=> router.push('/login')}
-            className="rounded-sm gap-y-5 text-red-400 font-semibold">log in
-            </button>
-            </div>
-
-        
+        <SignInForm/>
         <div className="box-border h-30 w-34 rounded-lg bg-red-50 gap-y-10 col-start-1">
             <div className="flex p-3 flex-col items-center space-y-4">
             <div className="flex items-center space-x-2">
@@ -68,7 +38,6 @@ export default function Page(){
             </div>
             </div>
         </div>
-
         <div className="py-5 font-normal text-center text-red-400 gap-y-5">don't have an account?
             <button type="button" className="text-center px-3 text-red-400  gap-y-5 font-bold tracking-wide"
             onClick={()=> router.push('/signup')}> sign up</button>
